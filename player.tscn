@@ -3,6 +3,8 @@
 [ext_resource type="PackedScene" uid="uid://pbmyh1qru7p" path="res://characters/happy_boo/happy_boo.tscn" id="1_4flbx"]
 [ext_resource type="Script" uid="uid://bwa21ugvtuam1" path="res://player.gd" id="1_onrkg"]
 [ext_resource type="PackedScene" uid="uid://du5i8r7jdycua" path="res://gun.tscn" id="3_i3pqv"]
+[ext_resource type="AudioStream" uid="uid://bmv680e160j3u" path="res://sounds/Laser Shot.wav" id="4_hqtel"]
+[ext_resource type="AudioStream" uid="uid://bsvex0twxhx3c" path="res://sounds/damage_taken.mp3" id="5_sweqy"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_onrkg"]
 radius = 33.0
@@ -38,6 +40,11 @@ shape = SubResource("CircleShape2D_onrkg")
 [node name="Gun" parent="." unique_id=11591085 instance=ExtResource("3_i3pqv")]
 position = Vector2(0, -30)
 
+[node name="ShootSound" type="AudioStreamPlayer2D" parent="Gun" unique_id=435315296]
+unique_name_in_owner = true
+stream = ExtResource("4_hqtel")
+volume_db = -10.0
+
 [node name="HurtBox" type="Area2D" parent="." unique_id=476835951]
 unique_name_in_owner = true
 collision_layer = 0
@@ -57,3 +64,7 @@ theme_override_styles/background = SubResource("StyleBoxFlat_k8ckf")
 theme_override_styles/fill = SubResource("StyleBoxFlat_8ib2y")
 value = 100.0
 show_percentage = false
+
+[node name="DamageTakenSound" type="AudioStreamPlayer2D" parent="." unique_id=1164108174]
+unique_name_in_owner = true
+stream = ExtResource("5_sweqy")

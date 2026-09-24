@@ -66,8 +66,10 @@ func _process(delta):
 	
 	%SurvivalTimer.text = "%02d:%02d" % [minutes, seconds]
 	
+	
 	if cycle_time >= cycle_length:
 		cycle_time -= cycle_length
+		%RoundSound.play()
 		start_new_round()
 
 
@@ -109,7 +111,7 @@ func update_xp_bar():
 	%XPBar.max_value = xp_needed
 	%XPBar.value = xp
 
-
+#Level Up
 func level_up():
 	xp = 0
 	
@@ -121,6 +123,8 @@ func level_up():
 	update_xp_bar()
 	
 	%LevelUpPanel.visible = true
+	
+	%LevelUpSound.play()
 	
 	get_tree().paused = true
 
@@ -145,10 +149,7 @@ func close_level_up():
 	get_tree().paused = false
 
 
-# -------------------------
-# MOB SPAWNING
-# -------------------------
-
+#Mob Spawning
 func spawn_mob():
 	var new_mob = preload("res://mob.tscn").instantiate()
 	
@@ -170,6 +171,8 @@ func on_mob_killed():
 	
 	%KillCounter.text = "%d" % kill_count
 	
+	%MobDeathSound.play()
+	
 	add_xp(1)
 
 
@@ -190,6 +193,7 @@ func _on_player_health_depleted() -> void:
 	%MobsKilled.text = "Mobs Killed: %d" % kill_count
 	
 	%GameOver.visible = true
+	%GameOverSound.play()
 	get_tree().paused = true
 	
 #pause function

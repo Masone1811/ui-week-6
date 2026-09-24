@@ -29,6 +29,10 @@ func _physics_process(delta):
 	if overlapping_mobs.size() > 0:
 		health -= damage_rate * overlapping_mobs.size() * delta
 		%HealthBar.value = health
+		
+		if not %DamageTakenSound.playing:
+			%DamageTakenSound.play()
+		
 		if health <= 0.0:
 			health_depleted.emit()
 			

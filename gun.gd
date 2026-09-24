@@ -30,6 +30,8 @@ func shoot():
 	%ShootingPoint.add_child(new_bullet)
 	new_bullet.global_position = %ShootingPoint.global_position
 	new_bullet.global_rotation = %ShootingPoint.global_rotation
+	
+	%ShootSound.play()
 
 func _on_timer_timeout():
 	shoot()
