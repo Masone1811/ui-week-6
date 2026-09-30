@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://dh14qy7uvwc16"]
+
+[ext_resource type="PackedScene" uid="uid://baohm58wb38si" path="res://player.tscn" id="1_jkuhc"]
+[ext_resource type="Script" uid="uid://oj7hj4kgw31t" path="res://survivor_game.gd" id="1_ony8i"]
+[ext_resource type="PackedScene" uid="uid://dq3r015sr1uql" path="res://pine_tree.tscn" id="2_ony8i"]
+
+[sub_resource type="Curve2D" id="Curve2D_nyt22"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -191, -247, 0, 0, 0, 0, 2057, -247, 0, 0, 0, 0, 2063, 1233, 0, 0, 0, 0, -322, 1239, 0, 0, 0, 0, -309, -247, 0, 0, 0, 0, -242, -247, 0, 0, 0, 0, -191, -247)
+}
+point_count = 7
+
+[node name="Game" type="Node2D" unique_id=1991420748]
+position = Vector2(38, 21)
+script = ExtResource("1_ony8i")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1500965773]
+layer = -1
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=1514317463]
+offset_top = -2.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Player" parent="." unique_id=814097230 instance=ExtResource("1_jkuhc")]
+position = Vector2(923, 556)
+
+[node name="PineTree" parent="." unique_id=1149868711 instance=ExtResource("2_ony8i")]
+position = Vector2(434, 385)
+
+[node name="PineTree2" parent="." unique_id=622589231 instance=ExtResource("2_ony8i")]
+position = Vector2(324, 837)
+
+[node name="PineTree3" parent="." unique_id=1219377300 instance=ExtResource("2_ony8i")]
+position = Vector2(935, 922)
+
+[node name="PineTree4" parent="." unique_id=174806683 instance=ExtResource("2_ony8i")]
+position = Vector2(1470, 271)
+
+[node name="PineTree5" parent="." unique_id=664165290 instance=ExtResource("2_ony8i")]
+position = Vector2(1375, 751)
+
+[node name="PineTree6" parent="." unique_id=1670209251 instance=ExtResource("2_ony8i")]
+position = Vector2(913, 226)
+
+[node name="PineTree7" parent="." unique_id=1135157824 instance=ExtResource("2_ony8i")]
+position = Vector2(426, 766)
+
+[node name="PineTree8" parent="." unique_id=880972145 instance=ExtResource("2_ony8i")]
+position = Vector2(230, 735)
+
+[node name="Path2D" type="Path2D" parent="." unique_id=1637288079]
+curve = SubResource("Curve2D_nyt22")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D" unique_id=32687685]
+unique_name_in_owner = true
+position = Vector2(-191, -247)
+
+[node name="Timer" type="Timer" parent="." unique_id=2097457559]
+wait_time = 0.4
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
