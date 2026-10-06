@@ -7,6 +7,9 @@
 shader = ExtResource("2_nwcfo")
 shader_parameter/amount = 5.0
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d0prb"]
+bg_color = Color(0.19793722, 0.19793725, 0.19793713, 1)
+
 [node name="PauseMenu" type="Control" unique_id=774447475]
 top_level = true
 light_mask = 7
@@ -52,6 +55,138 @@ text = "Resume"
 [node name="Quit" type="Button" parent="MarginContainer/VBoxContainer" unique_id=172470195]
 layout_mode = 2
 text = "Quit"
+
+[node name="PAUSED" type="MarginContainer" parent="." unique_id=1490749815]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.22000001
+anchor_top = 0.215
+anchor_right = 0.46
+anchor_bottom = 0.28
+offset_left = -0.6000366
+offset_top = -0.19500732
+offset_right = 0.2000122
+offset_bottom = -0.44000244
+
+[node name="Label" type="Label" parent="PAUSED" unique_id=817307611]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.011087579, 0.011087578, 0.01108758, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 48
+text = "PAUSED"
+horizontal_alignment = 1
+
+[node name="UPGRADES" type="MarginContainer" parent="." unique_id=1217677182]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.67800003
+anchor_top = 0.21700001
+anchor_right = 0.81900007
+anchor_bottom = 0.266
+offset_left = -0.3400879
+offset_top = 0.45898438
+offset_right = -0.5701904
+offset_bottom = -0.018005371
+
+[node name="Label" type="Label" parent="UPGRADES" unique_id=1292988035]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.0018410678, 0.0018410682, 0.0018410678, 1)
+theme_override_font_sizes/font_size = 48
+text = "UPGRADES"
+horizontal_alignment = 1
+
+[node name="Time Played" type="MarginContainer" parent="." unique_id=320687187]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.056
+anchor_top = 0.133
+anchor_right = 0.11100001
+anchor_bottom = 0.16700001
+offset_left = 0.3199997
+offset_top = -0.009002686
+offset_right = -0.3300171
+offset_bottom = 0.10899353
+
+[node name="Label" type="Label" parent="Time Played" unique_id=1657726046]
+modulate = Color(0.011764706, 0.5137255, 0.69411767, 0.8156863)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "Time Played"
+horizontal_alignment = 1
+
+[node name="Enimies Killed" type="MarginContainer" parent="." unique_id=486764920]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.88400006
+anchor_top = 0.133
+anchor_right = 0.938
+anchor_bottom = 0.16700001
+offset_left = -0.5201416
+offset_top = -0.009002686
+offset_right = 0.85998535
+offset_bottom = 0.10899353
+
+[node name="Label" type="Label" parent="Enimies Killed" unique_id=1863342780]
+modulate = Color(0.011764706, 0.5137255, 0.69411767, 0.8156863)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "Enemies Killed"
+horizontal_alignment = 1
+
+[node name="Progress to LVL" type="MarginContainer" parent="." unique_id=1418073550]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.453
+anchor_top = 0.8880001
+anchor_right = 0.545
+anchor_bottom = 0.92200005
+offset_left = 0.40997314
+offset_top = 0.37597656
+offset_right = 0.6500244
+offset_bottom = 0.49389648
+
+[node name="Label" type="Label" parent="Progress to LVL" unique_id=822945133]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.029506557, 0.029506557, 0.029506557, 1)
+text = "Progress to Next Level"
+horizontal_alignment = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="." unique_id=1550396890]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.628
+anchor_top = 0.36800003
+anchor_right = 0.85800004
+anchor_bottom = 0.573
+offset_left = 0.15991211
+offset_top = 0.33596802
+offset_right = -0.7401123
+offset_bottom = -0.12902832
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer2" unique_id=74688081]
+layout_mode = 2
+theme_override_constants/separation = 34
+
+[node name="Damage" type="Label" parent="MarginContainer2/VBoxContainer" unique_id=433784383]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_d0prb")
+text = "Damage = 0"
+horizontal_alignment = 1
+
+[node name="Firerate" type="Label" parent="MarginContainer2/VBoxContainer" unique_id=1319086657]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_d0prb")
+text = "Firerate = 0"
+horizontal_alignment = 1
+
+[node name="Health" type="Label" parent="MarginContainer2/VBoxContainer" unique_id=2136586707]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_d0prb")
+text = "Health = 0"
+horizontal_alignment = 1
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]

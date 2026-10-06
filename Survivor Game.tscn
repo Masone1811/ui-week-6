@@ -285,6 +285,9 @@ position = Vector2(188, 424)
 
 [connection signal="health_depleted" from="Player" to="." method="_on_player_health_depleted"]
 [connection signal="pressed" from="UILayer/LevelUpPanel/DamageButton" to="." method="_on_damage_button_pressed"]
+[connection signal="pressed" from="UILayer/LevelUpPanel/DamageButton" to="PauseMenu" method="_on_damage_button_pressed"]
 [connection signal="pressed" from="UILayer/LevelUpPanel/FireRateButton" to="." method="_on_fire_rate_button_pressed"]
+[connection signal="pressed" from="UILayer/LevelUpPanel/FireRateButton" to="PauseMenu" method="_on_fire_rate_button_pressed"]
 [connection signal="pressed" from="UILayer/LevelUpPanel/HealthButton" to="." method="_on_health_button_pressed"]
+[connection signal="pressed" from="UILayer/LevelUpPanel/HealthButton" to="PauseMenu" method="_on_health_button_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
