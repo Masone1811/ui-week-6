@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://baohm58wb38si" path="res://player.tscn" id="1_jkuhc"]
 [ext_resource type="Script" uid="uid://oj7hj4kgw31t" path="res://survivor_game.gd" id="1_ony8i"]
 [ext_resource type="PackedScene" uid="uid://dq3r015sr1uql" path="res://pine_tree.tscn" id="2_ony8i"]
+[ext_resource type="PackedScene" uid="uid://3i77r48q81rw" path="res://pause_menu.tscn" id="4_nyt22"]
 
 [sub_resource type="Curve2D" id="Curve2D_nyt22"]
 _data = {
@@ -31,6 +32,11 @@ position = Vector2(38, 21)
 script = ExtResource("1_ony8i")
 metadata/_edit_vertical_guides_ = [960.0]
 metadata/_edit_horizontal_guides_ = [568.0, -200.0]
+
+[node name="PauseMenu" parent="." unique_id=774447475 instance=ExtResource("4_nyt22")]
+visible = false
+offset_left = 5.0
+offset_top = 2.0
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=576333443]
 offset = Vector2(960, 540)
