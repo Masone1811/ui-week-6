@@ -1,5 +1,8 @@
 extends Node2D
 
+#refrence pause_menu scrpit and create var paused
+@onready var pause_menu = $PauseMenu
+var paused = false
 
 var survival_time = 0.0
 
@@ -51,6 +54,10 @@ func change_background_color():
 	%BackgroundColor.color = background_colors[color_index]
 
 func _process(delta):
+	#adding escape button for pause menu
+	if Input.is_action_just_pressed("pause"):
+		PauseMenu()
+	
 	survival_time += delta
 	cycle_time += delta
 	
@@ -182,3 +189,14 @@ func _on_player_health_depleted() -> void:
 	
 	%GameOver.visible = true
 	get_tree().paused = true
+	
+#pause function
+func PauseMenu():
+	if paused:
+		pause_menu.hide()
+		Engine.time_scale = 1
+	else:
+		pause_menu.show()
+		Engine.time_scale = 0
+		
+	paused = !paused

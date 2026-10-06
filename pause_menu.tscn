@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://3i77r48q81rw"]
+
+[ext_resource type="Script" uid="uid://dkqr7dggrsl4b" path="res://pause_menu.gd" id="1_hdmo1"]
+[ext_resource type="Shader" uid="uid://cq1t3cm5wb3uk" path="res://pause_menu.gdshader" id="2_nwcfo"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_d0prb"]
+shader = ExtResource("2_nwcfo")
+shader_parameter/amount = 5.0
+
+[node name="PauseMenu" type="Control" unique_id=774447475]
+top_level = true
+light_mask = 7
+visibility_layer = 7
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -48.0
+offset_top = -45.0
+offset_right = 62.0
+offset_bottom = 48.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hdmo1")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1927505320]
+light_mask = 7
+visibility_layer = 7
+material = SubResource("ShaderMaterial_d0prb")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=112564372]
+layout_mode = 0
+offset_left = 445.0
+offset_top = 432.0
+offset_right = 911.0
+offset_bottom = 672.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1790068216]
+layout_mode = 2
+
+[node name="Resume" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1970165926]
+layout_mode = 2
+text = "Resume"
+
+[node name="Quit" type="Button" parent="MarginContainer/VBoxContainer" unique_id=172470195]
+layout_mode = 2
+text = "Quit"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
