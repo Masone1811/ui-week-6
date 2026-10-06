@@ -1,1 +1,10 @@
 .godot/
+git rm -r --cached .godot
+.godot/editor/filesystem_cache10
+.godot/editor/editor_layout.cfg
+.godot/editor/script_editor_cache.cfg
+.godot/uid_cache.bin
+.godot/editor/editor_layout.cfg
+.godot/editor/filesystem_cache10
+.godot/editor/script_editor_cache.cfg
+.godot/uid_cache.bin

@@ -1,0 +1,277 @@
+[gd_scene format=3 uid="uid://hcphlc5pi1dv"]
+
+[ext_resource type="Script" uid="uid://cyx33c8345qn" path="res://main_menu.gd" id="1_06t4h"]
+[ext_resource type="Texture2D" uid="uid://by1wi10bnmk11" path="res://trees/pine_tree.png" id="2_7vrkn"]
+
+[node name="MainMenu" type="Control" unique_id=837272826]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_06t4h")
+
+[node name="Background" type="ColorRect" parent="." unique_id=393011049]
+layout_mode = 0
+offset_right = 1919.0
+offset_bottom = 1082.0
+color = Color(0.7921569, 0.7921569, 0.7921569, 1)
+
+[node name="MenuContainer" type="VBoxContainer" parent="." unique_id=444382832]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 0
+offset_right = 1915.0
+offset_bottom = 1081.0
+theme_override_constants/separation = 150
+
+[node name="TitleLabel" type="Label" parent="MenuContainer" unique_id=1582280790]
+layout_mode = 2
+
+[node name="PlayButton" type="Button" parent="MenuContainer" unique_id=1970710911]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(500, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.9575724, 0.23350528, 0.33970737, 1)
+theme_override_font_sizes/font_size = 45
+text = "PLAY"
+
+[node name="HighScoresButton" type="Button" parent="MenuContainer" unique_id=1583119600]
+custom_minimum_size = Vector2(500, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.9575724, 0.23350528, 0.33970737, 1)
+theme_override_font_sizes/font_size = 45
+text = "High Scores"
+
+[node name="SettingsButton" type="Button" parent="MenuContainer" unique_id=349512007]
+custom_minimum_size = Vector2(500, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.9575724, 0.23350528, 0.33970737, 1)
+theme_override_font_sizes/font_size = 45
+text = "Settings"
+
+[node name="HighScores" type="Panel" parent="." unique_id=1659822122]
+unique_name_in_owner = true
+layout_mode = 0
+offset_top = 1.0
+offset_right = 1920.0
+offset_bottom = 1086.0
+
+[node name="HighScoresContainer" type="VBoxContainer" parent="HighScores" unique_id=1400868282]
+layout_mode = 0
+offset_left = 698.0
+offset_right = 1212.0
+offset_bottom = 1076.0
+theme_override_constants/separation = 73
+
+[node name="HighScoresTitle" type="Label" parent="HighScores/HighScoresContainer" unique_id=1056510120]
+layout_mode = 2
+theme_override_font_sizes/font_size = 45
+text = "High Scores:"
+horizontal_alignment = 1
+
+[node name="Score1" type="Label" parent="HighScores/HighScoresContainer" unique_id=1700157289]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 45
+text = "1."
+horizontal_alignment = 1
+
+[node name="Score2" type="Label" parent="HighScores/HighScoresContainer" unique_id=1897989168]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 45
+text = "2."
+horizontal_alignment = 1
+
+[node name="Score3" type="Label" parent="HighScores/HighScoresContainer" unique_id=1318948777]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 45
+text = "3."
+horizontal_alignment = 1
+
+[node name="Score4" type="Label" parent="HighScores/HighScoresContainer" unique_id=897243160]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 45
+text = "4."
+horizontal_alignment = 1
+
+[node name="Score5" type="Label" parent="HighScores/HighScoresContainer" unique_id=426294442]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 45
+text = "5."
+horizontal_alignment = 1
+
+[node name="HighScoresBackButton" type="Button" parent="HighScores/HighScoresContainer" unique_id=1089406777]
+custom_maximum_size = Vector2(500, -1)
+layout_mode = 2
+offset_transform_position = Vector2(500, 0)
+theme_override_font_sizes/font_size = 45
+text = "Back
+"
+
+[node name="Settings" type="Panel" parent="." unique_id=501645917]
+unique_name_in_owner = true
+visible = false
+layout_mode = 0
+offset_right = 1923.0
+offset_bottom = 1081.0
+
+[node name="SettingsContainer" type="VBoxContainer" parent="Settings" unique_id=1984874863]
+layout_mode = 0
+offset_left = 707.0
+offset_top = 5.0
+offset_right = 1918.0
+offset_bottom = 1080.0
+offset_transform_enabled = true
+theme_override_constants/separation = 100
+
+[node name="SettingsTitle" type="Label" parent="Settings/SettingsContainer" unique_id=1839498142]
+layout_mode = 2
+theme_override_font_sizes/font_size = 45
+text = "              Settings"
+
+[node name="MusicLabel" type="Label" parent="Settings/SettingsContainer" unique_id=1610982393]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 45
+text = "         Music Volume"
+
+[node name="MusicSlider" type="HSlider" parent="Settings/SettingsContainer" unique_id=1286849523]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 50)
+custom_maximum_size = Vector2(500, -1)
+layout_mode = 2
+size_flags_vertical = 1
+
+[node name="SFXLabel" type="Label" parent="Settings/SettingsContainer" unique_id=1583004990]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 45
+text = "            SFX Volume"
+
+[node name="SFXSlider" type="HSlider" parent="Settings/SettingsContainer" unique_id=1772426701]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(50, 50)
+custom_maximum_size = Vector2(500, -1)
+layout_mode = 2
+
+[node name="SettingsBackButton" type="Button" parent="Settings/SettingsContainer" unique_id=1762639582]
+unique_name_in_owner = true
+custom_maximum_size = Vector2(500, -1)
+layout_mode = 2
+theme_override_font_sizes/font_size = 45
+text = "Back"
+icon_alignment = 1
+
+[node name="PineTree" type="Sprite2D" parent="." unique_id=488794602]
+position = Vector2(65, 987)
+texture = ExtResource("2_7vrkn")
+
+[node name="PineTree2" type="Sprite2D" parent="." unique_id=1514822393]
+position = Vector2(64, 800)
+texture = ExtResource("2_7vrkn")
+
+[node name="PineTree3" type="Sprite2D" parent="." unique_id=2053037437]
+position = Vector2(65, 625)
+texture = ExtResource("2_7vrkn")
+
+[node name="PineTree4" type="Sprite2D" parent="." unique_id=1987617783]
+position = Vector2(66, 454)
+texture = ExtResource("2_7vrkn")
+
+[node name="PineTree5" type="Sprite2D" parent="." unique_id=1681020848]
+position = Vector2(65, 273)
+texture = ExtResource("2_7vrkn")
+
+[node name="PineTree6" type="Sprite2D" parent="." unique_id=1621641809]
+position = Vector2(66, 80)
+texture = ExtResource("2_7vrkn")
+
+[node name="PineTree7" type="Sprite2D" parent="." unique_id=1569040268]
+position = Vector2(213, 989)
+texture = ExtResource("2_7vrkn")
+
+[node name="PineTree8" type="Sprite2D" parent="." unique_id=203751116]
+position = Vector2(362, 991)
+texture = ExtResource("2_7vrkn")
+
+[node name="PineTree9" type="Sprite2D" parent="." unique_id=1811945693]
+position = Vector2(506, 992)
+texture = ExtResource("2_7vrkn")
+
+[node name="PineTree10" type="Sprite2D" parent="." unique_id=84988000]
+position = Vector2(651, 996)
+texture = ExtResource("2_7vrkn")
+
+[node name="PineTree11" type="Sprite2D" parent="." unique_id=1901502305]
+position = Vector2(793, 995)
+texture = ExtResource("2_7vrkn")
+
+[node name="PineTree12" type="Sprite2D" parent="." unique_id=1884680698]
+position = Vector2(927, 997)
+texture = ExtResource("2_7vrkn")
+
+[node name="PineTree13" type="Sprite2D" parent="." unique_id=1357154411]
+position = Vector2(1066, 996)
+texture = ExtResource("2_7vrkn")
+
+[node name="PineTree14" type="Sprite2D" parent="." unique_id=924825182]
+position = Vector2(1198, 995)
+texture = ExtResource("2_7vrkn")
+
+[node name="PineTree15" type="Sprite2D" parent="." unique_id=1635438978]
+position = Vector2(1330, 994)
+texture = ExtResource("2_7vrkn")
+
+[node name="PineTree16" type="Sprite2D" parent="." unique_id=1580677467]
+position = Vector2(1845, 994)
+texture = ExtResource("2_7vrkn")
+
+[node name="PineTree17" type="Sprite2D" parent="." unique_id=973140850]
+position = Vector2(1844, 807)
+texture = ExtResource("2_7vrkn")
+
+[node name="PineTree18" type="Sprite2D" parent="." unique_id=1989611133]
+position = Vector2(1845, 632)
+texture = ExtResource("2_7vrkn")
+
+[node name="PineTree19" type="Sprite2D" parent="." unique_id=947322616]
+position = Vector2(1846, 461)
+texture = ExtResource("2_7vrkn")
+
+[node name="PineTree20" type="Sprite2D" parent="." unique_id=617611627]
+position = Vector2(1845, 280)
+texture = ExtResource("2_7vrkn")
+
+[node name="PineTree21" type="Sprite2D" parent="." unique_id=131425706]
+position = Vector2(1846, 87)
+texture = ExtResource("2_7vrkn")
+
+[node name="PineTree22" type="Sprite2D" parent="." unique_id=1324755383]
+position = Vector2(1461, 995)
+texture = ExtResource("2_7vrkn")
+
+[node name="PineTree23" type="Sprite2D" parent="." unique_id=2008530110]
+position = Vector2(1589, 996)
+texture = ExtResource("2_7vrkn")
+
+[node name="PineTree24" type="Sprite2D" parent="." unique_id=668990330]
+position = Vector2(1718, 997)
+texture = ExtResource("2_7vrkn")
+
+[connection signal="pressed" from="MenuContainer/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="MenuContainer/HighScoresButton" to="." method="_on_high_scores_button_pressed"]
+[connection signal="pressed" from="MenuContainer/SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="HighScores/HighScoresContainer/HighScoresBackButton" to="." method="_on_high_scores_back_button_pressed"]
+[connection signal="value_changed" from="Settings/SettingsContainer/MusicSlider" to="." method="_on_music_slider_value_changed"]
+[connection signal="value_changed" from="Settings/SettingsContainer/SFXSlider" to="." method="_on_sfx_slider_value_changed"]
+[connection signal="pressed" from="Settings/SettingsContainer/SettingsBackButton" to="." method="_on_settings_back_button_pressed"]

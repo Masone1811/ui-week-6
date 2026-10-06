@@ -79,9 +79,13 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="Survival-Game-UI"
-run/main_scene="uid://dh14qy7uvwc16"
+run/main_scene="uid://hcphlc5pi1dv"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.png"
+
+[autoload]
+
+GameData="*uid://x40rrt2y5fns"
 
 [display]
 

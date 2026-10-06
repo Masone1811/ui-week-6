@@ -178,6 +178,8 @@ func _on_timer_timeout():
 
 
 func _on_player_health_depleted() -> void:
+	GameData.add_score(survival_time)
+
 	var minutes = int(survival_time) / 60
 	var seconds = int(survival_time) % 60
 	
