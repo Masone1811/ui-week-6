@@ -2,13 +2,37 @@
 
 [ext_resource type="Script" uid="uid://dkqr7dggrsl4b" path="res://pause_menu.gd" id="1_hdmo1"]
 [ext_resource type="Shader" uid="uid://cq1t3cm5wb3uk" path="res://pause_menu.gdshader" id="2_nwcfo"]
+[ext_resource type="Texture2D" uid="uid://04laapuvtphr" path="res://UI Icons/2 Frames/CasualGameButtonsVol01/PNG/CGB01-grey_L_sharp_btn.png" id="3_05uyy"]
+[ext_resource type="Texture2D" uid="uid://dooms7mrug8mu" path="res://UI Icons/2 Frames/CasualGameButtonsVol01/PNG/CGB01-blue_XL_rounded_btn.png" id="4_2nc7s"]
+[ext_resource type="Texture2D" uid="uid://b38wh2ern3rq6" path="res://UI Icons/2 Frames/CasualGameButtonsVol01/PNG/CGB01-orange_L_sharp_btn.png" id="5_d3xb4"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_d0prb"]
 shader = ExtResource("2_nwcfo")
 shader_parameter/amount = 5.0
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d0prb"]
-bg_color = Color(0.19793722, 0.19793725, 0.19793713, 1)
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_d2raq"]
+texture = ExtResource("3_05uyy")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_m2td8"]
+texture = ExtResource("3_05uyy")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_p81d2"]
+texture = ExtResource("4_2nc7s")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_d3xb4"]
+texture = ExtResource("4_2nc7s")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mxa3g"]
+texture = ExtResource("5_d3xb4")
+modulate_color = Color(1, 1, 1, 0.19607843)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_e8sti"]
+texture = ExtResource("5_d3xb4")
+modulate_color = Color(1, 1, 1, 0.19607843)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_q2yj1"]
+texture = ExtResource("5_d3xb4")
+modulate_color = Color(1, 1, 1, 0.19607843)
 
 [node name="PauseMenu" type="Control" unique_id=774447475]
 top_level = true
@@ -50,10 +74,12 @@ theme_override_constants/separation = 34
 
 [node name="Resume" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1970165926]
 layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_d2raq")
 text = "Resume"
 
 [node name="Quit" type="Button" parent="MarginContainer/VBoxContainer" unique_id=172470195]
 layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_m2td8")
 text = "Quit"
 
 [node name="PAUSED" type="MarginContainer" parent="." unique_id=1490749815]
@@ -73,38 +99,40 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0.011087579, 0.011087578, 0.01108758, 1)
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxTexture_p81d2")
 text = "PAUSED"
 horizontal_alignment = 1
 
 [node name="UPGRADES" type="MarginContainer" parent="." unique_id=1217677182]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.67800003
+anchor_left = 0.624
 anchor_top = 0.21700001
-anchor_right = 0.81900007
-anchor_bottom = 0.266
-offset_left = -0.3400879
+anchor_right = 0.864
+anchor_bottom = 0.282
+offset_left = -0.7199707
 offset_top = 0.45898438
-offset_right = -0.5701904
-offset_bottom = -0.018005371
+offset_right = 0.079956055
+offset_bottom = 0.21398926
 
 [node name="Label" type="Label" parent="UPGRADES" unique_id=1292988035]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.0018410678, 0.0018410682, 0.0018410678, 1)
 theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxTexture_d3xb4")
 text = "UPGRADES"
 horizontal_alignment = 1
 
 [node name="Time Played" type="MarginContainer" parent="." unique_id=320687187]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.056
+anchor_left = 0.046000004
 anchor_top = 0.133
-anchor_right = 0.11100001
+anchor_right = 0.1
 anchor_bottom = 0.16700001
-offset_left = 0.3199997
+offset_left = -0.38000488
 offset_top = -0.009002686
-offset_right = -0.3300171
+offset_right = 1.0
 offset_bottom = 0.10899353
 
 [node name="Label" type="Label" parent="Time Played" unique_id=1657726046]
@@ -170,21 +198,21 @@ theme_override_constants/separation = 34
 [node name="Damage" type="Label" parent="MarginContainer2/VBoxContainer" unique_id=433784383]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_d0prb")
+theme_override_styles/normal = SubResource("StyleBoxTexture_mxa3g")
 text = "Damage = 0"
 horizontal_alignment = 1
 
 [node name="Firerate" type="Label" parent="MarginContainer2/VBoxContainer" unique_id=1319086657]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_d0prb")
+theme_override_styles/normal = SubResource("StyleBoxTexture_e8sti")
 text = "Firerate = 0"
 horizontal_alignment = 1
 
 [node name="Health" type="Label" parent="MarginContainer2/VBoxContainer" unique_id=2136586707]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_d0prb")
+theme_override_styles/normal = SubResource("StyleBoxTexture_q2yj1")
 text = "Health = 0"
 horizontal_alignment = 1
 

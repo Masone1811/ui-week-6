@@ -2,6 +2,16 @@
 
 [ext_resource type="Script" uid="uid://cyx33c8345qn" path="res://main_menu.gd" id="1_06t4h"]
 [ext_resource type="Texture2D" uid="uid://by1wi10bnmk11" path="res://trees/pine_tree.png" id="2_7vrkn"]
+[ext_resource type="Texture2D" uid="uid://04laapuvtphr" path="res://UI Icons/2 Frames/CasualGameButtonsVol01/PNG/CGB01-grey_L_sharp_btn.png" id="2_fu7sn"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_csjqc"]
+texture = ExtResource("2_fu7sn")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ql6yi"]
+texture = ExtResource("2_fu7sn")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gg0mk"]
+texture = ExtResource("2_fu7sn")
 
 [node name="MainMenu" type="Control" unique_id=837272826]
 layout_mode = 3
@@ -35,24 +45,24 @@ unique_name_in_owner = true
 custom_minimum_size = Vector2(500, 100)
 layout_mode = 2
 size_flags_horizontal = 4
-theme_override_colors/font_color = Color(0.9575724, 0.23350528, 0.33970737, 1)
 theme_override_font_sizes/font_size = 45
+theme_override_styles/normal = SubResource("StyleBoxTexture_csjqc")
 text = "PLAY"
 
 [node name="HighScoresButton" type="Button" parent="MenuContainer" unique_id=1583119600]
 custom_minimum_size = Vector2(500, 100)
 layout_mode = 2
 size_flags_horizontal = 4
-theme_override_colors/font_color = Color(0.9575724, 0.23350528, 0.33970737, 1)
 theme_override_font_sizes/font_size = 45
+theme_override_styles/normal = SubResource("StyleBoxTexture_ql6yi")
 text = "High Scores"
 
 [node name="SettingsButton" type="Button" parent="MenuContainer" unique_id=349512007]
 custom_minimum_size = Vector2(500, 100)
 layout_mode = 2
 size_flags_horizontal = 4
-theme_override_colors/font_color = Color(0.9575724, 0.23350528, 0.33970737, 1)
 theme_override_font_sizes/font_size = 45
+theme_override_styles/normal = SubResource("StyleBoxTexture_gg0mk")
 text = "Settings"
 
 [node name="HighScores" type="Panel" parent="." unique_id=1659822122]
