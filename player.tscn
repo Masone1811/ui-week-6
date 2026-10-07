@@ -44,6 +44,7 @@ position = Vector2(0, -30)
 unique_name_in_owner = true
 stream = ExtResource("4_hqtel")
 volume_db = -10.0
+bus = &"SFX"
 
 [node name="HurtBox" type="Area2D" parent="." unique_id=476835951]
 unique_name_in_owner = true
@@ -68,3 +69,4 @@ show_percentage = false
 [node name="DamageTakenSound" type="AudioStreamPlayer2D" parent="." unique_id=1164108174]
 unique_name_in_owner = true
 stream = ExtResource("5_sweqy")
+bus = &"SFX"

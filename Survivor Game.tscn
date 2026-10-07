@@ -4,6 +4,11 @@
 [ext_resource type="Script" uid="uid://oj7hj4kgw31t" path="res://survivor_game.gd" id="1_ony8i"]
 [ext_resource type="PackedScene" uid="uid://dq3r015sr1uql" path="res://pine_tree.tscn" id="2_ony8i"]
 [ext_resource type="PackedScene" uid="uid://3i77r48q81rw" path="res://pause_menu.tscn" id="4_nyt22"]
+[ext_resource type="AudioStream" uid="uid://cj743cuux8whd" path="res://sounds/LoopWIP1.ogg" id="5_aeywb"]
+[ext_resource type="AudioStream" uid="uid://c11qkw82qjwg" path="res://sounds/game_over.wav" id="6_7inyp"]
+[ext_resource type="AudioStream" uid="uid://b06ukt2ywlh4h" path="res://sounds/Level Up.mp3" id="6_vwi0n"]
+[ext_resource type="AudioStream" uid="uid://d387rhqmcy3ol" path="res://sounds/Transition.mp3" id="7_e0ho8"]
+[ext_resource type="AudioStream" uid="uid://qi5w0hc8oasl" path="res://sounds/mob_death_sound.wav" id="8_e0ho8"]
 
 [sub_resource type="Curve2D" id="Curve2D_nyt22"]
 _data = {
@@ -65,6 +70,7 @@ position = Vector2(-191, -247)
 
 [node name="GameOver" type="CanvasLayer" parent="." unique_id=1821051912]
 unique_name_in_owner = true
+process_mode = 2
 visible = false
 
 [node name="ColorRect" type="ColorRect" parent="GameOver" unique_id=2052715982]
@@ -116,6 +122,16 @@ offset_top = 716.0
 offset_right = 1086.0
 offset_bottom = 771.0
 theme_override_font_sizes/font_size = 40
+
+[node name="MainMenuButton" type="Button" parent="GameOver" unique_id=1069965926]
+unique_name_in_owner = true
+anchors_preset = -1
+offset_left = 809.0
+offset_top = 828.0
+offset_right = 1109.0
+offset_bottom = 927.0
+theme_override_font_sizes/font_size = 45
+text = "Main Menu"
 
 [node name="UILayer" type="CanvasLayer" parent="." unique_id=1043188422]
 layer = 10
@@ -283,7 +299,36 @@ position = Vector2(637, 154)
 [node name="PineTree18" parent="." unique_id=1149868711 instance=ExtResource("2_ony8i")]
 position = Vector2(188, 424)
 
+[node name="GameMusic" type="AudioStreamPlayer2D" parent="." unique_id=1415432248]
+unique_name_in_owner = true
+stream = ExtResource("5_aeywb")
+autoplay = true
+bus = &"Music"
+parameters/looping = true
+
+[node name="LevelUpSound" type="AudioStreamPlayer2D" parent="." unique_id=855836136]
+unique_name_in_owner = true
+stream = ExtResource("6_vwi0n")
+bus = &"SFX"
+
+[node name="RoundSound" type="AudioStreamPlayer2D" parent="." unique_id=393785557]
+unique_name_in_owner = true
+stream = ExtResource("7_e0ho8")
+bus = &"Music"
+
+[node name="MobDeathSound" type="AudioStreamPlayer2D" parent="." unique_id=979128764]
+unique_name_in_owner = true
+stream = ExtResource("8_e0ho8")
+bus = &"SFX"
+
+[node name="GameOverSound" type="AudioStreamPlayer2D" parent="." unique_id=1283725686]
+unique_name_in_owner = true
+position = Vector2(7, 3)
+stream = ExtResource("6_7inyp")
+bus = &"SFX"
+
 [connection signal="health_depleted" from="Player" to="." method="_on_player_health_depleted"]
+[connection signal="pressed" from="GameOver/MainMenuButton" to="." method="_on_main_menu_button_pressed"]
 [connection signal="pressed" from="UILayer/LevelUpPanel/DamageButton" to="." method="_on_damage_button_pressed"]
 [connection signal="pressed" from="UILayer/LevelUpPanel/DamageButton" to="PauseMenu" method="_on_damage_button_pressed"]
 [connection signal="pressed" from="UILayer/LevelUpPanel/FireRateButton" to="." method="_on_fire_rate_button_pressed"]

@@ -5,7 +5,13 @@ func _ready():
 	%HighScores.visible = false
 	%Settings.visible = false
 
+	update_settings_sliders()
 	update_high_scores()
+
+#Update settings
+func update_settings_sliders():
+	%MusicSlider.set_value_no_signal(GameData.music_volume * 100)
+	%SFXSlider.set_value_no_signal(GameData.sfx_volume * 100)
 
 #Populate high scores
 func update_high_scores():
@@ -16,6 +22,7 @@ func update_high_scores():
 		%Score4,
 		%Score5
 	]
+	
 
 	for i in range(labels.size()):
 		if i < GameData.high_scores.size():
@@ -46,6 +53,8 @@ func _on_high_scores_button_pressed():
 func _on_settings_button_pressed():
 	%Settings.visible = true
 	%MenuContainer.visible = false
+	
+	update_settings_sliders()
 
 
 func _on_back_button_pressed():
